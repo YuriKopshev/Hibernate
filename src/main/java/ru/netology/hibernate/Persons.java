@@ -15,21 +15,23 @@ import java.io.Serializable;
 @Entity
 public class Persons implements Serializable {
 
-
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Id
-    @Column(nullable = false)
+    @Column(name = "NAME",nullable = false)
     private String name;
+
     @Id
-    @Column(nullable = false)
+    @Column(name = "SURNAME",nullable = false)
     private String surname;
+
     @Column(nullable = false)
     private int age;
-    @Column(nullable = true)
+
+    @Column
     private int phone_number;
+
     @Column
     private int city_of_living;
 
