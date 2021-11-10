@@ -33,7 +33,6 @@ public class Persons implements Serializable {
     private int phone_number;
 
     @Column
-    private int city_of_living;
-
+    private String city_of_living;
 }
 
