@@ -27,7 +27,7 @@ public class DataBaseController {
     }
 
     @GetMapping("/persons/by-name-surname")
-    private Persons getPersonsByNameAndSurname(@RequestParam String name, String surname) {
+    private Persons getPersonsByNameAndSurname(@RequestParam String name, @RequestParam String surname) {
         return service.getPersonsByNameAndSurname(name, surname);
     }
 }
