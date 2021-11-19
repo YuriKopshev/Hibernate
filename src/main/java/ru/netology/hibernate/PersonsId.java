@@ -1,15 +1,14 @@
 package ru.netology.hibernate;
 
 
-
 import java.io.Serializable;
 import java.util.Objects;
 
 
 public class PersonsId implements Serializable {
-    private final int id;
-    private final String name;
-    private final String surname;
+    private int id;
+    private String name;
+    private String surname;
 
     public PersonsId(int id, String name, String surname) {
         this.id = id;
@@ -17,6 +16,8 @@ public class PersonsId implements Serializable {
         this.surname = surname;
     }
 
+    public PersonsId() {
+    }
 
     @Override
     public boolean equals(Object o) {
