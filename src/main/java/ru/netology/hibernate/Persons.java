@@ -13,17 +13,16 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@IdClass(PersonsId.class)
 public class Persons implements Serializable {
 
     @Id
     private int id;
 
     @Id
-    @Column(name = "NAME",nullable = false)
     private String name;
 
     @Id
-    @Column(name = "SURNAME",nullable = false)
     private String surname;
 
     @Column(nullable = false)
@@ -33,7 +32,7 @@ public class Persons implements Serializable {
     private int phone_number;
 
     @Column
-    private int city_of_living;
+    private String city;
 
 }
 
