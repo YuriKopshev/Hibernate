@@ -15,9 +15,18 @@ import java.util.Optional;
 
 public interface PersonsRepository extends JpaRepository<Persons,PersonsId> {
 
-    List<Persons> findByAgeLessThanOrderByAge(int age);
+//    List<Persons> findByAgeLessThanOrderByAge(int age);
+//
+//    Optional<Persons> findByNameAndSurname(String name,String surname);
+//
+//    List<Persons>findByCity(String city);
 
-    Optional<Persons> findByNameAndSurname(String name,String surname);
+    @Query("select p from Persons p where p.city = :city")
+    List<Persons> findAllPersonsWithCity_of_living(@Param("city") String city);
 
-    List<Persons>findByCity(String city);
+    @Query("select p from Persons p where p.age < :age")
+    List<Persons> findAllPersonsWhereAgeLess(@Param("age") int age, Sort sort);
+
+    @Query("select p from Persons p where p.name = :name and p.surname = :surname")
+    Optional<Persons> findAllPersonsWithNameAndSurname(@Param("name") String name, @Param("surname") String surname);
 }
